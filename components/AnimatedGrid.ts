@@ -10,31 +10,7 @@ export class AnimatedGrid extends Grid{
 
   protected override drawShape(context: CanvasRenderingContext2D): void {
 
-    if(this.drawing){
-      context.save();
-      this.applyStyle(context);
-      this.drawRipple(context);
-  
-      const spacing = this.spacing();
-      const size = this.computedSize().scale(0.5);
-      const steps = size.div(spacing).floored;
-  
-      for (let x = -steps.x; x <= steps.x; x++) {
-        context.beginPath();
-        context.moveTo(spacing.x * x, -size.height);
-        context.lineTo(spacing.x * x, size.height);
-        context.stroke();
-      }
-  
-      for (let y = -steps.y; y <= steps.y; y++) {
-        context.beginPath();
-        context.moveTo(-size.width, spacing.y * y);
-        context.lineTo(size.width, spacing.y * y);
-        context.stroke();
-      }
-  
-      context.restore();
-    }    
+    if(this.drawing)super.drawShape(context);    
   }
   
   public *play(eachRowDuration : number, eachColumDuration : number){
