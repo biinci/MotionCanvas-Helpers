@@ -6,4 +6,11 @@ To use it, place this helpers file under the folder named "src" of your project.
 
 ##Using the Animation Grid
 ```ts
-asda
+function* myFunc(view : View2D){
+    const grid = createRef<AnimatedGrid>();
+    view.add(<AnimatedGrid ref={grid} size={[1920, 1080]} stroke={"#ff0034"} lineWidth={5} />) 
+    yield* grid().play(0.3, 0.15)
+}
+
+export default makeScene2D(myFunc)
+```
