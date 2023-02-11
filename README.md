@@ -4,7 +4,7 @@ An easy way to make some animations in Motion Canvas.
 
 To use it, place this helpers file under the folder named "src" of your project. Then you can import it as you like.
 
-##Using the Animation Grid
+Using the Animation Grid
 ```ts
 function* myFunc(view : View2D){
     const grid = createRef<AnimatedGrid>();
